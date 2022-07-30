@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Método de los cuadrados medios</title>
+{% endblock %}
+
+{% block content %}
+<br>
+<h3 class=""><center>Método de cuadrdos medios</center></h3>
+<br>
+<br>
+<h3 class=""><center>¿Qué es el algoritmo de cuadrdos medios</center></h3>
+<br>
+<center>
+<img width="500px" src="https://naps.com.mx/blog/wp-content/uploads/2017/09/algoritmo-de-cuadrados-medios-imagen-articulo.jpeg" alt=""></div>    <br><br>
+<p style="text-align:justify; margin-left: 250px; margin-right: 250px;">Un número pseudo aleatorio es un número que cumple las funciones de un número aleatorio pero es generado a través de un algoritmo matemático. Si conocemos el algoritmo que se utilizó para generar una secuencia de números pseudo aleatorios, así como algunos valores iniciales,
+     se puede predecir toda la secuencia de números que se van a generar.</p>
+    </center>
+     <br>
+<center>
+    <legend class="text-center header"><b> Formulario para el cálculo de los cuadrados medios</b></legend><br>
+    <div class="container">
+    
+        <div class="card">
+            <form method="POST" action="{{url_for('CuadradosMedios')}}"><br>
+                <div class="col-sm-12">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Número iteraciones</label>
+                            <input name="numeroIteraciones" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Semilla</label>
+                            <input name="semilla" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Calcular</button>
+                </div>
+            </form><br>
+        </div>
+    </div><br>
+</center>
+
+<div class="container">
+    {% if image %}
+    <center>
+        <h2>Gráfica</h2>
+    </center>
+    <br>
+    <center>
+    <p style="text-align:justify; margin-left: 250px; margin-right: 250px;">A continuación se presenta la gráfica generada del cálculo realizado</p>
+    <div class="card">
+    </center>
+        <center><img src="data:image/png;base64,{{ image }}"></center>
+    </div>
+    {% else %}
+    {% endif %}
+</div><br>
+<div class="container">
+    {% if data %}
+    <center>
+        <h2>Tabla de resultados:</h2>
+    </center><br>
+    <br>
+    <center>
+    <p style="text-align:justify; margin-left: 250px; margin-right: 250px;">Para finalizar mostramos la tabla con los datos generados</p>
+    <div class="card">
+        <br>
+    </center>
+    <center>
+        {{data|safe}}
+        {% else %}
+        {% endif %}
+    </center>
+</div>
+<br>
+{% endblock %}

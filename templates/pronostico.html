@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Pronósticos</title>
+{% endblock %}
+
+{% block content %}
+
+<br>
+<h1 class=""><center>¿Qué son los Pronósticos?</center></h1>
+<br>
+<span> <center>El pronóstico puede ser utilizado a distintos niveles, permitiendo tomar decisiones 
+    para mitigar los efectos negativos que puedan tener ciertas contingencias en caso de que llegaran a concretarse.
+</center></span>
+<br>
+<a  href="#"><img src="/static/images/pronosticos.jpg" class="imglayout2"></a>
+<br>
+<h1 class=""><center>Pronósticos</center></h1>
+<br>
+<span> <center>La presente pestaña tiene como finalidad el realizar la simulación
+pronósticos de la fuente de datos que se usará para el proyecto, la cual tiene como información:
+</center></span>
+<h1><center>Importación de la fuente de datos</center></h1>  
+<br>
+<div class="container">
+    <center> {{data|safe}}</center>
+</div>
+<br>
+<h1><center>Promedio movil de las ventas diarias</center></h1> 
+<div align="center">
+    <br>
+    <p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Como primer punto tenemos el hayar los promedios moviles, para ello primero elegiremos el 
+        compo de "Ventas_diarias".</p>
+</div>
+<br>
+<div class="container">
+    <center> {{movillle|safe}}</center>
+</div>
+<br>
+<div>
+     <h1><center>Gráfico de los promedios móviles</center></h1> 
+</div>
+<div align="center">
+    <br>
+   
+    <br>
+    <p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Los resultados anteriores dieron como resultado la siguiente gráfica:</p>
+</div>
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image }}"></center>
+</div>
+<h1><center>Alisamiento Exponencial de las ventas diarias</center></h1> 
+</br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Ahora se procede a calcular el alisamiento exponencial de las ventas diarias, dando como resultado:</p>
+<br>
+<div class="container">
+    <center> {{tabla2|safe}}</center>
+</div>
+<br>
+<h1><center>Gráficos de regresión lineal y cuadrática</center></h1> 
+<br>
+<h2><center>Regresión lineal</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Los resultados anteriores arrojaron la siguiente gráfica:</p>
+<br>
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image2 }}"></center>
+</div>
+<br>
+<h2><center>Regresión Cuadrática</center></h1> 
+<br>
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image3 }}"></center>
+</div>
+<br>
+<h1><center>Pronóstico para los dias "11/4/2022" y "12/4/2022"</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Mediante el algoritmo de pronósticos, podemos determinar la cantidad de ajuste para los próximos 2 días,
+tal y como se muestra en la siguiente tabla:</p>
+<br>
+<div class="container">
+    <center> {{tabla3|safe}}</center>
+</div>
+<br>
+<h1><center>Gráfica de los pronósticos</center></h1> 
+<br>
+
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image4 }}"></center>
+</div>
+<h1><center>Cálculo de pronósticos para el campo "Gastos_diarios"</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Para la segunda parte de esta problemática, se vuelve a importar los datos usados anteriormente</p>
+<br>
+
+<div class="container">
+    <center> {{datosnew|safe}}</center>
+</div>
+<br>
+<h1><center>Cálculo de promedios moviles para el campo"Gastos_diarios"</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Mediante el algoritmo de pronósticos, podemos determinar la cantidad de ajuste para los próximos 2 días,
+    tal y como se muestra en la siguiente tabla:</p>
+<br>
+
+<div class="container" style="margin-top:15px;">
+    <center> {{movill|safe}}</center>
+</div>
+<br>
+<h1><center>Gráfico de los promedios móviles</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Los cálculos realizados anteriormente arrojaron la siguiente gráfica</p>
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image5 }}"></center>
+</div>
+<br>
+<h1><center>Cálculo de alisamiento exponencial de los gastos diarios </center></h1> 
+<br>
+<div class="container" style="margin-top:15px;">
+    <center> {{novil|safe}}</center>
+</div>
+<br>
+<h1><center>Gráficos de regresión lineal y cuadrática</center></h1> 
+<br>
+<h2><center>Regresión lineal</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">El cálculo de alisamiento exponenial dió como resultado la siguiente tabla</p>
+
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image6 }}"></center>
+</div>
+<br>
+<h2><center>Regresión cuadrática</center></h1> 
+<br>
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image7 }}"></center>
+</div>
+<br>
+<h1><center>Pronóstico para los dias "11/4/2022" y "12/4/2022"</center></h1> 
+<br>
+<p style="text-align:justify; margin-left: 350px; margin-right: 100px;">Mediante el algoritmo de pronósticos, podemos determinar la cantidad de ajuste para los próximos 2 días,
+tal y como se muestra en la siguiente tabla:</p>
+<br>
+<div class="container" style="margin-top:15px;">
+    <center> {{novile|safe}}</center>
+</div>
+<br>
+<h1><center>Gráfica de los pronósticos</center></h1> 
+<br>
+
+<div class="card">
+    <center><img src="data:image/png;base64,{{ image8 }}"></center>
+</div>
+{% endblock %}

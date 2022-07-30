@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Método congruencial lineal</title>
+{% endblock %}
+
+{% block content %}
+<br>
+<h3 class=""><center>Método de Congruencia Lineal</center></h3>
+<br>
+<br>
+<h3 class=""><center>¿Qué es el algoritmo de congruencia lineal?</center></h3>
+<br>
+<center>
+    <img width="500px" src="https://www.itdigitalsecurity.es/files/201810/pam-seguridad-testing.jpg" alt=""></div>    <br><br>
+    <p style="text-align:justify; margin-left: 250px; margin-right: 250px;">Es un algoritmo que permite obtener una secuencia de números pseudoaleatorios calculados 
+        con una función lineal definida a trozos discontinua. Es uno de los métodos más antiguos y conocidos para la generación 
+        de números pseudoaleatorios.1​ La teoría que sustenta el proceso es relativamente fácil de entender, 
+        el algoritmo en sí es de fácil implementación y su ejecución es rápida, especialmente cuando el hardware del ordenador 
+        puede soportar aritmética modular al truncar el bit de almacenamiento correspondiente.</p>
+        </center>
+         <br>
+<center>
+    <br>
+    <legend class="text-center header"> <b>Formulario para el cálculo de Método congruencial lineal </b></legend><br>
+    <div class="container">
+    
+        <div class="card">
+            <form method="POST" action="{{url_for('CongruencialLineal')}}"><br>
+                <div class="container">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Número iteraciones(n)</label><br>
+                            <input name="numeroIteraciones" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Semilla(x0)</label><br>
+                            <input name="semilla" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Multiplicador(a)</label><br>
+                            <input name="multiplicador" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Incremento(c)</label><br>
+                            <input name="incremento" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Módulo(m)</label><br>
+                            <input name="modulo" type="number" class="form-control" id="validationDefault01" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Calcular</button>
+                </div>
+            </form><br>
+        </div>
+    </div><br>
+    
+    <div class="container">
+        {% if image %}
+        <center>
+            <legend class="text-left header">Gráfica</legend>
+        </center>
+        <div class="card">
+            <center><img src="data:image/png;base64,{{ image }}"></center>
+        </div>
+        {% else %}
+        {% endif %}
+    </div><br>
+    <div class="container">
+        {% if data %}
+        <legend class="text-left header">Tabla de resultados</legend><br>
+        {{data|safe}}
+        {{data2|safe}}
+        {% else %}
+        {% endif %}
+    </div>
+    <br>
+</center>
+{% endblock %}
