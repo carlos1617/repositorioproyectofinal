@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/estilo.css')}}">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="#"><img style ="width: 120px;"src="/static/images/logo.jpeg" class="imglayout"></a>
+
+            <nav>
+                <ul>
+                    <li> <a href="{{url_for('inicio')}}"> Inicio </a> </li>
+                    <li> <a href="{{url_for('pronosticos')}}"> Pronósticos </a> </li>
+                    <li> <a href="{{url_for('montecarlo')}}"> Montecarlo </a> </li>
+                    <li> <a href="/estadistica"> Estadistica </a> </li>
+                    <li> <a href="/CuadradosMedios"> Cuadrados Medios</a> </li>
+                    <li> <a href="/congruencialineal"> Congruencia Lineal </a> </li>
+                    <li> <a href="/CongruencialMultiplicativo"> Congruencia Multiplicativo </a> </li>
+                    <li> <a href="{{url_for('manual')}}"> Manual</a> </li>
+                    <li> <a href="{{url_for('video')}}"> Video explicativo</a> </li>
+                    
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <div align="center">
+    
+    <h2 style="text-align: center;"> <b > Manual de Usuario</b></h2>
+    <br>
+    
+    
+    </div>
+    <iframe src="https://docdro.id/lIJQ6yY" style="width:100%; height:600px; border:0;"> </iframe>
+    <br>
+   
+<br><br>
+    <footer class="footer"> 
+        <p class="text2">Modelamiento y simulación</p>
+        <p class="text2">Proyecto Final</p>
+        <p class="text2">Carlos Eduardo Palma Miranda</p>
+        <p class="text2">@2022 Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
